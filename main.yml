@@ -18,7 +18,7 @@ jobs:
         # Action to authenticate with Docker Hub using repository secrets
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: ${{ secrets.hanoosh }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Set up Docker Buildx
@@ -30,7 +30,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKER_USERNAME }}/flask-cicd-app
+          images: ${{ secrets.hanoosh }}/flask-cicd-app
           tags: |
             type=sha,prefix=
             type=raw,value=latest
